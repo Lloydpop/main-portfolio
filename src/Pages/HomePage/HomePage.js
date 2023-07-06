@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import NavItem from "../../Component/NavBar/NavItem/NavItem";
+import React, { useEffect, useState } from "react";
+import NavItem, { SocialItems } from "../../Component/NavBar/NavItem/NavItem";
 import Logo from "../../Component/Logo/Logo";
 import Message from "./About/Component/Message";
 import Projects from "./About/Component/Projects";
@@ -9,32 +9,50 @@ import pat from "../../Assets/pattern.svg";
 import { Example } from "../../hooks/example";
 import { Pattern, Pattern2 } from "../../Component/pattern/Pattern";
 import { tabs } from "../../hooks/tabs";
-const HomePage = () => {
-  const [welcome, setWelcome] = useState(true);
-  const [[page, direction], setPage] = useState([0, 0]);
+import { useLocation } from "react-router-dom";
+const HomePage = ({
+  welcome,
+  setWelcome,
+  setPage,
+  tabs,
+  page,
+  direction,
+  bg,
+}) => {
+  const location = useLocation();
+  const [classN, addClass] = useState(false);
+  useEffect(() => {
+    if (location.pathname === "/home") {
+      addClass(true);
+    }
+  }, [location]);
+  useEffect(() => {
+    window.addEventListener("mousemove", (e) => {
+      const cursor = document.querySelector(".custom-cursor");
+      if (cursor) {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+      }
+    });
+  }, []);
   return (
-    <main className=" px-[40px] h-[100vh] lg:overflow-y-hidden overflow-y-visible">
-      <nav className="flex  justify-between">
-        <div className="mt-5 pl-[30px]">
-          <Pattern
-            defaultColor={
-              welcome === true
-                ? "linear-gradient(315deg, #5078f2 0%, #efe9f4 74%)"
-                : tabs[page]?.bg
-            }
-          />
-          <Logo
-            onClick={() => {
-              setWelcome(true);
-            }}
-          />
-        </div>
-        <div className="mt-10 pr-5">
-          <NavItem />
-        </div>
-      </nav>
-      <section className="mt-[60px] flex">
+    <main>
+      <div
+        className={`w-[23px] h-[23px] rounded-full  absolute top-0 left-0 overflow-hidden custom-cursor z-[100]`}
+        style={{
+          background:
+            welcome === true
+              ? "linear-gradient(315deg, #5078f2 0%, #efe9f4 74%)"
+              : tabs[page]?.bg,
+          transition: " 0.2s ease",
+        }}
+      >
+        <div className="h-[100%] w-[100%] rounded-full"></div>
+      </div>
+
+      <section className="mt-[60px] flex relative z-[50]">
         <Example
+          bg={bg}
           welcome={welcome}
           setWelcome={setWelcome}
           tabs={tabs}
@@ -42,17 +60,15 @@ const HomePage = () => {
           page={page}
           direction={direction}
         />
-        <div className="fixed bottom-[40px] right-[90px]">
+        <div
+          className={`fixed -bottom-[26px] right-[90px] -translate-y-[100%] scale-[0]${
+            classN === true ? "translate-y-[0] scale-[100%] " : ""
+          } duration-[1.5s]`}
+        >
+          <SocialItems />
           <Footer />
         </div>
       </section>
-      <Pattern2
-        defaultColor={
-          welcome === true
-            ? "linear-gradient(315deg, #5078f2 0%, #efe9f4 74%)"
-            : tabs[page]?.bg
-        }
-      />
     </main>
   );
 };

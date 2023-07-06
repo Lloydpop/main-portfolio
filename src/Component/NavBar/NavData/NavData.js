@@ -4,6 +4,16 @@ import git from "../../../Assets/github-24.png";
 import In from "../../../Assets/linkedin-3-24.png";
 export const NavData = [
   {
+    title: "Work",
+    to: "/project-overview",
+  },
+  {
+    title: "About",
+    to: "/about",
+  },
+];
+export const socials = [
+  {
     title: twitter,
     to: "https://twitter.com/perfectionchiz",
   },

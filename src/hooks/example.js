@@ -6,6 +6,8 @@ import "./style.css";
 import NavLink from "../Component/NavBar/NavLink/NavLink";
 import Projects from "../Pages/HomePage/About/Component/Projects";
 import { WelcomeContent } from "../Pages/HomePage/About/Component/Content/Content";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 const variants = {
   enter: (direction) => {
     return {
@@ -27,17 +29,6 @@ const variants = {
   },
 };
 
-/**
- * Experimenting with distilling swipe offset and velocity into a single variable, so the
- * less distance a user has swiped, the more velocity they need to register as a swipe.
- * Should accomodate longer swipes and short flicks without having binary checks on
- * just distance thresholds and velocity > 0.
- */
-const swipeConfidenceThreshold = 10000;
-const swipePower = (offset, velocity) => {
-  return Math.abs(offset) * velocity;
-};
-
 export const Example = ({
   welcome,
   setWelcome,
@@ -45,13 +36,15 @@ export const Example = ({
   page,
   setPage,
   direction,
+  bg,
 }) => {
-  // We only have 3 images, but we paginate them absolutely (ie 1, 2, 3, 4, 5...) and
-  // then wrap that within 0-2 to find our image ID in the array below. By passing an
-  // absolute page index as the `motion` component's `key` prop, `AnimatePresence` will
-  // detect it as an entirely new image. So you can infinitely paginate as few as 1 images.
-  // const imageIndex = wrap(0, images.length, page);
-
+  const location = useLocation();
+  const [classN, addClass] = useState(false);
+  useEffect(() => {
+    if (location.pathname === "/home") {
+      addClass(true);
+    }
+  }, [location]);
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
   };
@@ -88,11 +81,17 @@ export const Example = ({
                 }}
               >
                 {welcome === true ? (
-                  <WelcomeContent
-                    page={page}
-                    direction={direction}
-                    variants={variants}
-                  />
+                  <div
+                    className={`-translate-x-[100%]${
+                      classN === true ? "translate-x-[0]" : ""
+                    } duration-[1s]`}
+                  >
+                    <WelcomeContent
+                      page={page}
+                      direction={direction}
+                      variants={variants}
+                    />
+                  </div>
                 ) : (
                   <motion.section
                     className="absolute w-[100%] h-[100%] mt-[70px]"
@@ -105,14 +104,20 @@ export const Example = ({
                     transition={{
                       x: {
                         type: "spring",
-                        stiffness: 300,
+                        stiffness: 170,
                         damping: 30,
                         duration: 2,
                       },
-                      opacity: { duration: 0.2 },
+                      opacity: { duration: 0.3 },
                     }}
                   >
-                    {tabs[page]?.content}
+                    <div
+                      className={`-translate-y-[150%]${
+                        classN === true ? "translate-y-[0]" : ""
+                      } duration-[1.5s]`}
+                    >
+                      {tabs[page]?.content}
+                    </div>
                   </motion.section>
                 )}
               </motion.section>
@@ -120,6 +125,7 @@ export const Example = ({
           </div>
           <ul className="tabs-header pl-[100px]">
             <Projects
+              bg={bg}
               defaultValue={
                 welcome === true
                   ? "linear-gradient(315deg, #5078f2 0%, #efe9f4 74%)"
@@ -129,7 +135,12 @@ export const Example = ({
               {tabs.map(({ title }, i) => {
                 const isActive = i === page;
                 return (
-                  <div key={i} className="mt-8">
+                  <div
+                    key={i}
+                    className={`mt-8   -translate-y-[100%] scale-[0]${
+                      classN === true ? "translate-y-[0] scale-[100%] " : ""
+                    } duration-[1.5s]`}
+                  >
                     <NavLink
                       defaultValue={
                         welcome === true
@@ -142,7 +153,7 @@ export const Example = ({
                         setWelcome(false);
                         handle(i, page);
                       }}
-                    ></NavLink>
+                    />
                   </div>
                 );
               })}

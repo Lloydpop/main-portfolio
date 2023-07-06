@@ -1,12 +1,14 @@
 import React from "react";
 import { ArrowDownTrayIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
-import NavLink from "../../../../../Component/NavBar/NavLink/NavLink";
+import NavLink, {
+  NavRoute,
+} from "../../../../../Component/NavBar/NavLink/NavLink";
 import lloyd from "../../../../../Assets/me.jpg";
-export const WelcomeContent = ({ page, direction, variants }) => {
+export const WelcomeContent = ({ page, direction, variants, style }) => {
   return (
     <motion.section
-      className="absolute w-[100%] h-[100%]"
+      className={`absolute w-[100%] h-[100%] ${style}`}
       key={page}
       custom={direction}
       variants={variants}
@@ -71,28 +73,8 @@ export const WelcomeContent = ({ page, direction, variants }) => {
                     defaultValue="linear-gradient(315deg, #5078f2 0%, #efe9f4 74%)"
                     title={
                       <p className="flex items-center gap-2">
-                        Resume
+                        Download Resume
                         <ArrowDownTrayIcon
-                          className="h-6 w-6 text-[#12c2e9]"
-                          style={{
-                            background:
-                              "linear-gradient( to right, #f64f59, #c471ed, #12c2e9, #fff)",
-                            WebkitTextFillColor: "transparent",
-                            WebkitBackgroundClip: "text",
-                          }}
-                        />
-                      </p>
-                    }
-                    to={"cv.pdf"}
-                    size={"text-[19px] font-semibold"}
-                  />
-                  <NavLink
-                    small
-                    defaultValue="linear-gradient(315deg, #5078f2 0%, #efe9f4 74%)"
-                    title={
-                      <p className="flex items-center gap-2">
-                        Contact
-                        <EnvelopeIcon
                           className="h-5 w-5 text-[#12c2e9]"
                           style={{
                             background:
@@ -103,7 +85,7 @@ export const WelcomeContent = ({ page, direction, variants }) => {
                         />
                       </p>
                     }
-                    to={"mailto:lloydperfect199@gmail.com"}
+                    to={"cv.pdf"}
                     size={"text-[19px] font-semibold"}
                   />
                 </div>
@@ -137,18 +119,12 @@ export const Cappen = () => {
             design trends with smooth animations and transitions.
           </p>
           <div className=" mt-4 flex items-center gap-10">
-            <NavLink
+            <NavRoute
               small
+              blank=""
               defaultValue="linear-gradient(315deg, #44b09e 0%, #e0d2c7 74%)"
-              title={"View Site"}
-              to={"site"}
-              size={"text-[20px] font-semibold"}
-            />
-            <NavLink
-              small
-              defaultValue="linear-gradient(315deg, #44b09e 0%, #e0d2c7 74%)"
-              title={"Git Hub"}
-              to={"site"}
+              title={"View More"}
+              to={"/project-overview"}
               size={"text-[20px] font-semibold"}
             />
           </div>
