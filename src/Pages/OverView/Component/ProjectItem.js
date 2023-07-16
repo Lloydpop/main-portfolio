@@ -1,6 +1,7 @@
 import { Tooltip } from "@chakra-ui/react";
 import React from "react";
 import NavLink from "../../../Component/NavBar/NavLink/NavLink";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 const ProjectItem = ({
   videos,
   itemer,
@@ -15,9 +16,9 @@ const ProjectItem = ({
     <div>
       {videos.map((item, index) => {
         return (
-          <div className={`scale-[0] ${toggle} duration-[1s]`}>
+          <div className={`scale-[0] ${toggle} duration-[1s] parent`}>
             <Tooltip
-              className="tooltip fonty"
+              className="tooltip fonty hidden lg:block"
               label={expanded[index] ? "Expanded" : "Collapsed"}
               p={"4px"}
               borderRadius={"4px"}
@@ -25,9 +26,8 @@ const ProjectItem = ({
               color={"#000"}
             >
               <div>
-                {item?.title === "Cappen UI Clone" && (
-                  <span className="vertical-line block"></span>
-                )}
+                <span className="vertical-line block"></span>
+
                 <div
                   className="  flex justify-between items-center p-6 cursor-pointer"
                   onClick={() => {
@@ -35,35 +35,46 @@ const ProjectItem = ({
                     setItemer(item);
                   }}
                 >
-                  <h1
-                    className="text-[40px] font-semibold  flex items-center gap-5"
-                    style={{
-                      textShadow: "0 0 3px #cccfcabf",
-                    }}
-                  >
-                    <span className=" block">{item?.title}</span>
+                  <h1 className="lg:text-[40px] text-[25px]  font-semibold  flex lg:items-center  lg:gap-5 lg:flex-row flex-col">
+                    <span className=" block fonter">{item?.title}</span>
                     <p className="text-sm mt-4">
                       {" "}
                       {item?.date}
                       <span className="block mt-1">{item?.location}</span>
                     </p>
                   </h1>
-                  <NavLink
-                    title={"View Site"}
-                    to={"kkkk"}
-                    defaultValue={itemer?.bg}
-                  />
+                  <div>
+                    <div className="lg:block hidden">
+                      <NavLink
+                        title={"View Site"}
+                        to={item?.to}
+                        defaultValue={itemer?.bg}
+                        blank="_blank"
+                      />
+                    </div>
+                    <a
+                      href={item?.to}
+                      target="_blank"
+                      className="w-[30px] h-[30px] rounded-full flex items-center justify-center lg:hidden block"
+                      style={{
+                        background: item?.bg,
+                      }}
+                    >
+                      <ArrowRightIcon className="h-5 w-5 text-black" />
+                    </a>
+                  </div>
                 </div>
-                <span className="vertical-line block"></span>
+                <span className="vertical-line block relative hh">
+                  <span className=" block absolute top-0 left-0  h-[100%] tap duration-[0.8s]"></span>
+                </span>
               </div>
             </Tooltip>
 
             <div
               className={`${
-                isExpanded(index) ? "h-[400px] p-10 " : "h-[0] "
-              } overflow-hidden col-span-5  h-[350px]  rounded  duration-[0.5s] flex justify-between  `}
+                isExpanded(index) ? "lg:h-[400px] lg:p-10 " : "lg:h-[0] lg:p-0"
+              } overflow-hidden col-span-5  h-[0]  rounded  duration-[0.5s] flex justify-between  `}
               style={{
-                backgroundColor: "#000",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}

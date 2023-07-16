@@ -31,8 +31,8 @@ const Loader = () => {
     }
   }, [counter]);
   return (
-    <div className="flex  gap-6 px-8 mt-[30px]">
-      <div className="trans absolute p-2 right-[20px] rounded">
+    <div className="flex  gap-6 px-8 mt-[30px] flex-col lg:flex-row">
+      <div className="trans2 absolute p-2 lg:top-8 md:top-8 w-[fit-content] h-[35px] right-[27px] rounded bottom-8">
         {hour} : {minute} WAT
       </div>
       <div
@@ -61,7 +61,7 @@ const Loader = () => {
           {counter < 100 ? (
             ` Loading.... ${counter}%`
           ) : (
-            <div className="trans w-[50px] h-[50px] rounded-full flex items-center justify-center">
+            <div className="trans2 w-[50px] h-[50px] rounded-full flex items-center justify-center">
               100%
             </div>
           )}

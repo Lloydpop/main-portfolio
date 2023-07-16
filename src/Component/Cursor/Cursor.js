@@ -2,9 +2,9 @@ import React from "react";
 
 const Cursor = ({ itemer }) => {
   return (
-    <div>
+    <div className="lg:block hidden">
       <div
-        className={`w-[23px] h-[23px] rounded-full  absolute top-0 left-0 overflow-hidden custom-cursor z-[100]`}
+        className={`w-[23px] h-[23px] rounded-full  fixed top-0 left-0 overflow-hidden custom-cursor z-[100]`}
         style={{
           background:
             itemer?.bg === undefined

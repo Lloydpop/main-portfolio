@@ -5,14 +5,24 @@ import { NavRoute } from "../../Component/NavBar/NavLink/NavLink";
 import { MainFooter, MainNav } from "../../Component/Footer/Footer";
 import Cursor from "../../Component/Cursor/Cursor";
 import ProjectItem from "./Component/ProjectItem";
-const OverView = () => {
+import { Pattern, Pattern2 } from "../../Component/pattern/Pattern";
+import NavItem from "../../Component/NavBar/NavItem/NavItem";
+const OverView = ({
+  defaultColor,
+  addClass2,
+  handleBlueMode,
+  setClass2,
+  handleWhiteMode,
+  handleLightMode,
+  whiteModeArray,
+  blueModeArray,
+}) => {
   const [addClass, setClass] = useState(false);
   const location = useLocation();
 
   const [expanded, setExpanded] = useState({});
   const [activeIndex, setActiveIndex] = useState(null);
   const [itemer, setItemer] = useState({});
-  console.log(location);
 
   const toggleItem = (index) => {
     setExpanded((prevState) => ({
@@ -39,12 +49,21 @@ const OverView = () => {
   };
 
   useEffect(() => {
+    const cursor = document.querySelector(".custom-cursor");
+    cursor.style.left = "100px";
+    cursor.style.top = "200px";
     window.addEventListener("mousemove", (e) => {
-      const cursor = document.querySelector(".custom-cursor");
-
       if (cursor) {
-        cursor.style.left = `${e.clientX}px`;
-        cursor.style.top = `${e.clientY}px`;
+        var posX = e.clientX;
+        var posY = e.clientY;
+
+        var offset = 20;
+
+        posX = Math.min(Math.max(offset, posX), window.innerWidth - offset);
+        posY = Math.min(Math.max(offset, posY), window.innerHeight - offset);
+
+        cursor.style.left = posX + "px";
+        cursor.style.top = posY + "px";
       }
     });
     if (location.pathname === "/project-overview") {
@@ -52,29 +71,50 @@ const OverView = () => {
     }
   }, [location]);
   const toggle = addClass === true ? "scale-[100%]" : "";
-  const bounce = addClass === true ? "translate-x-[0]" : "";
+  const bounce = addClass === true ? "lg:translate-x-[0]" : "";
   return (
     <div className="">
       <Cursor itemer={itemer} />
       <section>
-        <MainNav addClass={addClass} title={"Chizuruoke / projects"} />
-        <section className={`flex overflow-y-hidden justify-between px-10`}>
+        <MainNav
+          addClass={addClass}
+          title={"Chizuruoke / Projects"}
+          defaultValue={itemer?.bg}
+        >
+          <NavItem
+            defaultColor={defaultColor}
+            addClass={addClass2}
+            handleLightMode={handleLightMode}
+            setClass={setClass2}
+            whiteModeArray={whiteModeArray}
+            handleBlueMode={handleBlueMode}
+            handleWhiteMode={handleWhiteMode}
+            blueModeArray={blueModeArray}
+          />
+        </MainNav>
+        <section
+          className={`flex lg:flex-row flex-col overflow-hidden justify-between px-10`}
+        >
           <p
-            className={`w-[30%] mt-4 text-sm -translate-x-[100%]${bounce} duration-[2s] `}
+            className={`lg:w-[30%] w-[100%] mt-4 text-sm ${
+              addClass === true
+                ? "translate-x-[0] lg:translate-y-[0]"
+                : "-translate-x-[100%] lg:-translate-y-[100%]"
+            } duration-[2s] `}
           >
             Empowering digital transformations for visionary brands, delivering
             innovative and results-driven solutions as a versatile web
             development specialist and an integral team contributor.
           </p>
+
           <h1
-            className={`text-[60px] font-semibold text-right -translate-y-[100%]${
-              addClass === true ? "translate-y-[0]" : ""
+            className={`lg:text-[60px] text-[40px] font-semibold text-right ${
+              addClass === true
+                ? "lg:translate-y-[0] translate-x-[0] lg:translate-x-[0] "
+                : "translate-x-[100%] lg:translate-x-[0]  lg:-translate-y-[100%]"
             } duration-[2s] `}
-            style={{
-              textShadow: "0 0 3px #cccfcabf",
-            }}
           >
-            SELECTED PROJECTS ({videos.length})
+            SELECTED PROJECTS [{videos.length}]
             <span className="block">2022-2023</span>
           </h1>
         </section>
@@ -92,21 +132,21 @@ const OverView = () => {
         </div>
       </section>
       <div className="mt-[90px]">
-        <h1
-          className="text-[40px] text-center w-[600px] m-auto fonty"
+        <div
+          className="lg:text-[40px] text-[26px] text-center lg:w-[600px] w-[100%] px-3 m-auto fonty"
           style={{
             textShadow: "0 0 2px #cccfcabf",
           }}
         >
           <p> To collaborate send an email to</p>
-          <a href="" className="block ">
-            perfectionchizuruoke@gmail.com
-          </a>
-          <p className="flex justify-center gap-4">
-            {" "}
-            OR <NavRoute title={"contact"} to={"/contact"} />
-          </p>
-        </h1>
+
+          <NavRoute
+            title={"  perfectionchizuruoke"}
+            to="mailto:perfectionchizuruoke@gmail.com?subject=Hello"
+            blank=""
+            defaultValue={itemer?.bg}
+          />
+        </div>
       </div>
       <MainFooter />
     </div>

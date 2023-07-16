@@ -3,6 +3,8 @@ import { NavRoute } from "../NavBar/NavLink/NavLink";
 import { ArrowUpIcon } from "@heroicons/react/24/outline";
 import spotify from "../../Assets/spotify.png";
 import useMonthAndYaer from "../../hooks/useMonthAndYaer";
+import NavItem from "../NavBar/NavItem/NavItem";
+import { useNavigate } from "react-router-dom";
 const Footer = () => {
   const { year } = useMonthAndYaer();
 
@@ -10,28 +12,29 @@ const Footer = () => {
 };
 
 export default Footer;
-export const MainNav = ({ addClass, title }) => {
+export const MainNav = ({ addClass, title, defaultValue, children }) => {
   return (
-    <>
+    <div>
       <div className=" mt-7">
         <div
-          className={`flex justify-between px-10 mb-3 -translate-y-[200%]${
+          className={`flex justify-between lg:px-10 md:px-10 px-4 mb-3 drop-shadow-md -translate-y-[200%]${
             addClass === true ? "translate-y-[0]" : ""
           } duration-[2s]`}
         >
-          <p
-            className="text-xl"
-            style={{
-              textShadow: "0 0 5px #cccfcabf",
-            }}
-          >
-            {title}
-          </p>
-          <NavRoute title={"Back"} to={"/home"} blank={""} />
+          <p className="text-xl">{title}</p>
+          <div className="flex items-center gap-7">
+            {children}
+            <NavRoute
+              title={"Back"}
+              to={"/home"}
+              blank={""}
+              defaultValue={defaultValue}
+            />
+          </div>
         </div>
         <span className="block vertical-line"></span>
       </div>
-    </>
+    </div>
   );
 };
 export const MainFooter = () => {
@@ -42,13 +45,17 @@ export const MainFooter = () => {
       behavior: "smooth",
     });
   };
-
+  const location = useNavigate();
   return (
     <footer>
-      <div className="mt-[120px]">
+      <div
+        className={`${
+          location.pathname === "/project-overview" ? "mt-[120px]" : "mt-[90px]"
+        }`}
+      >
         <div className="vertical-line "></div>
-        <div className="flex justify-between">
-          <a href className="fonty flex items-center gap-2 p-3">
+        <div className="flex lg:justify-between justify-center">
+          <a href className="fonty  items-center gap-2 p-3 hidden lg:flex">
             <img src={spotify} width={"30px"}></img>
             Upcoming Podcast
           </a>
@@ -60,7 +67,7 @@ export const MainFooter = () => {
             Back to Top
             <ArrowUpIcon className="w-3 h-3" />
           </div>
-          <div className="flex items-center gap-1 p-3 fonty">
+          <div className="flex items-center hidden lg:block gap-1 p-3 fonty">
             &copy; Perfection.{year}
           </div>
         </div>
