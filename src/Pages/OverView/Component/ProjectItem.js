@@ -1,4 +1,4 @@
-import { Tooltip } from "@chakra-ui/react";
+import Tooltip from "../../../Component/Tooltip/Tooltip";
 import React from "react";
 import NavLink from "../../../Component/NavBar/NavLink/NavLink";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
@@ -16,14 +16,12 @@ const ProjectItem = ({
     <div>
       {videos.map((item, index) => {
         return (
-          <div className={`scale-[0] ${toggle} duration-[1s] parent`}>
+          <div className={`scale-[0] ${toggle} duration-[1s] parent relative`}>
             <Tooltip
-              className="tooltip fonty hidden lg:block"
-              label={expanded[index] ? "Expanded" : "Collapsed"}
-              p={"4px"}
-              borderRadius={"4px"}
-              bg={item?.bg}
-              color={"#000"}
+              expanded={expanded}
+              index={index}
+              item={item}
+              style={`tooltip duration-[0.5s]`}
             >
               <div>
                 <span className="vertical-line block"></span>

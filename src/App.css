@@ -190,3 +190,7 @@ video {
 .change:hover {
   color: rgb(57, 57, 236);
 }
+.parent:hover .tooltip {
+  opacity: 1;
+  z-index: 10;
+}
