@@ -1,7 +1,7 @@
 import React from "react";
-import { ArrowDownTrayIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
+import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
-import NavLink, { NavRoute } from "../../../Component/NavBar/NavLink/NavLink";
+import NavLink from "../../../Component/NavBar/NavLink/NavLink";
 import lloyd from "../../../Assets/me.jpg";
 export const WelcomeContent = ({
   page,

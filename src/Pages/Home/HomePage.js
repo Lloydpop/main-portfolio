@@ -1,14 +1,6 @@
 import React, { useEffect, useState } from "react";
-import NavItem, { SocialItems } from "../../Component/NavBar/NavItem/NavItem";
-import Logo from "../../Component/Logo/Logo";
 
-import Projects from "./Projects";
-import Footer from "../../Component/Footer/Footer";
-
-import pat from "../../Assets/pattern.svg";
 import { Main } from "./Main";
-import { Pattern, Pattern2 } from "../../Component/pattern/Pattern";
-import { tabs } from "../../hooks/tabs";
 import { useLocation } from "react-router-dom";
 const HomePage = ({
   welcome,

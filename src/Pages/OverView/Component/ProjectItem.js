@@ -57,6 +57,7 @@ const ProjectItem = ({
                       style={{
                         background: item?.bg,
                       }}
+                      rel="noreferer"
                     >
                       <ArrowRightIcon className="h-5 w-5 text-black" />
                     </a>
@@ -92,6 +93,7 @@ const ProjectItem = ({
                       src={item?.src}
                       key={item?.id}
                       className=" scale-[90%]  "
+                      alt=""
                     />
                   ) : (
                     <video
@@ -120,6 +122,7 @@ const ProjectItem = ({
                     autoPlay={location.pathname === "/project-overview"}
                     muted
                     className=" scale-[90%]  "
+                    alt=""
                   />
                 </div>
               </div>

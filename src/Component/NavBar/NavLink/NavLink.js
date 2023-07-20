@@ -29,10 +29,11 @@ const NavLink = ({
         target={blank}
         key={key}
         id={id}
+        rel="noreferrer"
       >
         {nav ? (
           <span className="block h-[30px] w-[30px] flex items-center hover:brightness-0 justify-center tilt">
-            <img src={title} width={"20px"} />
+            <img src={title} width={"20px"} alt={"alt"} />
           </span>
         ) : (
           <div
@@ -75,10 +76,11 @@ export const NavRoute = ({
         target={blank}
         key={key}
         id={id}
+        rel="noreferrer"
       >
         {nav ? (
           <span className="block h-[30px] w-[30px] flex items-center hover:brightness-0 justify-center tilt">
-            <img src={title} width={"20px"} />
+            <img src={title} width={"20px"} alt={""} />
           </span>
         ) : (
           <div

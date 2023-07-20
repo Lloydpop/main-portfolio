@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { NavRoute } from "../NavBar/NavLink/NavLink";
 import { ArrowUpIcon } from "@heroicons/react/24/outline";
 import spotify from "../../Assets/spotify.png";
 import useMonthAndYaer from "../../hooks/useMonthAndYaer";
-import NavItem from "../NavBar/NavItem/NavItem";
+
 import { useNavigate } from "react-router-dom";
 const Footer = () => {
   const { year } = useMonthAndYaer();

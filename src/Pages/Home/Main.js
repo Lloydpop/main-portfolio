@@ -49,9 +49,6 @@ export const Main = ({
       addClass(true);
     }
   }, [location]);
-  const paginate = (newDirection) => {
-    setPage([page + newDirection, newDirection]);
-  };
 
   const handle = (i, page) => {
     if (i === page && welcome === false) {
@@ -167,7 +164,6 @@ export const Main = ({
               }
             >
               {tabs.map(({ title }, i) => {
-                const isActive = i === page;
                 return (
                   <div
                     key={i}

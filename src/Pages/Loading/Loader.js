@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import smoke from "../../Assets/loader.gif";
+
 import useMonthAndYaer from "../../hooks/useMonthAndYaer";
 import NavLink from "../../Component/NavBar/NavLink/NavLink";
 const Loader = () => {

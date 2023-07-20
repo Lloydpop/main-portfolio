@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from "react";
-import NavLink, { NavRoute } from "../../Component/NavBar/NavLink/NavLink";
+import NavLink from "../../Component/NavBar/NavLink/NavLink";
 import me from "../../Assets/me.jpg";
-import me2 from "../../Assets/workspace.jpg";
 import me3 from "../../Assets/edit.jpg";
-import spotify from "../../Assets/spotify.png";
 import { useLocation } from "react-router-dom";
-import { ArrowUpIcon } from "@heroicons/react/24/outline";
 import Cursor from "../../Component/Cursor/Cursor";
 import { MainFooter, MainNav } from "../../Component/Footer/Footer";
 import useMonthAndYaer from "../../hooks/useMonthAndYaer";
 import NavItem from "../../Component/NavBar/NavItem/NavItem";
-import ai from "../../Assets/ai.jpg";
+
 const About = ({
   defaultColor,
   addClass2,
@@ -98,6 +95,7 @@ const About = ({
         </div>
         <img
           src={me}
+          alt=""
           className={`rounded-full scale-0${
             addClass === true ? "scale-[100%]" : ""
           } duration-[2s] mt-10 lg:w-[350px] md:w-[350px] w-[250px]`}

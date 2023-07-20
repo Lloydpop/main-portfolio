@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavData, socials } from "../NavData/NavData";
 import NavLink, { NavRoute } from "../NavLink/NavLink";
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+
 import ToggleMode from "../../Switch/ToggleMode";
 
 const NavItem = ({

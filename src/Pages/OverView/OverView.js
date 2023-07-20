@@ -5,7 +5,7 @@ import { NavRoute } from "../../Component/NavBar/NavLink/NavLink";
 import { MainFooter, MainNav } from "../../Component/Footer/Footer";
 import Cursor from "../../Component/Cursor/Cursor";
 import ProjectItem from "./Component/ProjectItem";
-import { Pattern, Pattern2 } from "../../Component/pattern/Pattern";
+
 import NavItem from "../../Component/NavBar/NavItem/NavItem";
 const OverView = ({
   defaultColor,
@@ -71,7 +71,7 @@ const OverView = ({
     }
   }, [location]);
   const toggle = addClass === true ? "scale-[100%]" : "";
-  const bounce = addClass === true ? "lg:translate-x-[0]" : "";
+
   return (
     <div className="">
       <Cursor itemer={itemer} />
