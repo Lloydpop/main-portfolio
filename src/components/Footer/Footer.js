@@ -30,9 +30,10 @@ function Footer({ darkMode }) {
       <footer>
         <p className="font-sauce text-center  mb-12 mt-24 text-sm">
           If you have any inquiries, proposals, or exciting projects in mind,
-          <br />
+          <br className="lg:block hidden" />
           feel free to reach out. I&apos;m open to collaboration
-          <br /> and always ready to discuss new opportunities.
+          <br className="lg:block hidden" /> and always ready to discuss new
+          opportunities.
         </p>
         <div
           className={`text-center

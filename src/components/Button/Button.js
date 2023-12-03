@@ -9,9 +9,9 @@ function Button({ children, onClick, darkMode, href }) {
         href={href}
         className={`px-4 py-2 bg-black shadow-none outline-none ${
           darkMode
-            ? " bg-primary text-black font-[800] hover:bg-white"
-            : "text-white font-[500] "
-        } rounded-3xl  font-sauce tracking-tighter block text-sm  duration-150`}
+            ? " bg-white text-black font-[600] hover:bg-primary"
+            : "text-white "
+        } rounded-3xl  font-sauce tracking-tighter block text-sm font-[500]`}
         onClick={onClick}
       >
         {children}
