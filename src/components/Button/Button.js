@@ -8,8 +8,10 @@ function Button({ children, onClick, darkMode, href }) {
         rel="noreferer"
         href={href}
         className={`px-4 py-2 bg-black shadow-none outline-none ${
-          darkMode ? " bg-white text-black font-[600]" : "text-white "
-        } rounded-3xl  font-sauce tracking-tighter block text-sm font-[500]`}
+          darkMode
+            ? " bg-primary text-black font-[800] hover:bg-white"
+            : "text-white font-[500] "
+        } rounded-3xl  font-sauce tracking-tighter block text-sm  duration-150`}
         onClick={onClick}
       >
         {children}

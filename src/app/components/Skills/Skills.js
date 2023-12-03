@@ -101,7 +101,7 @@ function Skills({ darkMode }) {
             href="https://open.spotify.com/playlist/4jpdsYPe99YSFssvT3PHGF?si=4ebe7ee92cbe49a2"
             rel="noreferer"
             target="_blank"
-            className="text-sm flex items-center gap-4"
+            className="text-md flex items-center gap-4"
           >
             <Image alt="spotify" className="w-[30px]" src={spotify} />
             Click to acess my spotify playlist.

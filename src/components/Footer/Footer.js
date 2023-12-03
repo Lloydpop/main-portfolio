@@ -28,7 +28,7 @@ function Footer({ darkMode }) {
   return (
     <div className="lg:mt-48 mt-24">
       <footer>
-        <p className="font-sauce text-center my-24 text-sm">
+        <p className="font-sauce text-center  mb-12 mt-24 text-sm">
           If you have any inquiries, proposals, or exciting projects in mind,
           <br />
           feel free to reach out. I&apos;m open to collaboration
