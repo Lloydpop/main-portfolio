@@ -47,7 +47,7 @@ export default function Home() {
             >
               <Image
                 alt="profile"
-                className="rounded-[50%] lg:w-[20rem] md:w-[20rem] sm:w-[90%] w-[90%] mx-auto object-contain"
+                className="rounded-[50%] lg:w-[20rem] md:w-[20rem] sm:w-[80%] w-[80%] mx-auto object-contain"
                 src={darkMode ? profile2 : profile}
               />
             </div>

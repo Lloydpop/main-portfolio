@@ -44,7 +44,7 @@ function Footer({ darkMode }) {
             rel="noreferer"
             target="_blank"
             href="mailto:lloydperfect199@gmail.com"
-            className={`text-[8rem] lg:text-[12rem]  flex items-center gap-10 ${
+            className={`text-[5.4rem] lg:text-[12rem]  flex items-center gap-8 ${
               darkMode ? "hover:text-primary" : "hover:text-gray-800"
             } animate-horizontalMovement px-4`}
           >

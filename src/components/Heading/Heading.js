@@ -14,7 +14,7 @@ const Heading = ({ children, size = "18rem", darkMode }) => {
         {children}
       </h1>
       <h1
-        className={`leading-[7rem] text-[8rem] tracking-tighter lg:hidden block ${
+        className={`md:leading-[7rem] sm:leading-[5.4rem] leading-[5rem] sm:text-[5.4rem] md:text-[8rem] text-[5.4rem] tracking-tighter lg:hidden block ${
           darkMode ? "hover:text-primary" : "hover:text-gray-800"
         } duration-75 `}
       >
