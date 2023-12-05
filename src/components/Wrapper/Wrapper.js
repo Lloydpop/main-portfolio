@@ -11,6 +11,14 @@ const Wrapper = ({ children, darkMode, setDarkMode }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
 
+  useEffect(() => {
+    audioRef.current.addEventListener("ended", handleAudioEnded);
+
+    return () => {
+      audioRef.current.removeEventListener("ended", handleAudioEnded);
+    };
+  }, []);
+
   const togglePlay = () => {
     audioRef.current.volume = 0.1;
     if (audioRef.current.paused) {
@@ -19,6 +27,10 @@ const Wrapper = ({ children, darkMode, setDarkMode }) => {
       audioRef.current.pause();
     }
     setIsPlaying(!isPlaying);
+  };
+
+  const handleAudioEnded = () => {
+    setIsPlaying(false);
   };
   const ScrollToTopButton = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -44,7 +56,7 @@ const Wrapper = ({ children, darkMode, setDarkMode }) => {
 
     return (
       <div
-        className={`fixed  bottom-8 right-4  ${
+        className={`fixed z-[1000]  bottom-8 right-4  ${
           darkMode
             ? "bg-primary text-black hover:bg-white"
             : "bg-black text-white"

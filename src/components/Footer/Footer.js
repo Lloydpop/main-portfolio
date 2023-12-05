@@ -58,7 +58,7 @@ function Footer({ darkMode }) {
             <span>...</span>
           </a>
         </div>
-        <ul className="flex justify-center flex-wrap gap-9 mt-12 font-sauce font-[600]">
+        <ul className="flex justify-center flex-wrap lg:gap-9 md:gap-9 sm:gap-6 gap-6 mt-12 font-sauce font-[600]">
           {links.map((link) => (
             <li key={link.title}>
               <a
