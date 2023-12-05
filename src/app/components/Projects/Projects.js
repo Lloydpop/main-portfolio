@@ -20,7 +20,7 @@ function Projects({ darkMode }) {
     {
       name: "GMFB",
       description:
-        " Experience the sophistication of tracking cryptocurrency exchange rates effortlessly. Our platform seamlessly blends cutting-edgetechnology with refined simplicity, empowering you with confidence in understanding and monitoring crypto values. Join our community for a journey into precise cryptocurrency tracking.",
+        " Embracing the latest in financial technology, we provide seamless digital banking solutions that enhance efficiency and convenience for our corporate clients. Manage your finances, conduct transactions, and access information with ease through our user-friendly platforms.",
       image: gmfb,
       href: "https://corporatebanking.groomingmfb.com/",
     },
@@ -42,7 +42,7 @@ function Projects({ darkMode }) {
     {
       name: "HOMES",
       description:
-        " Experience the sophistication of tracking cryptocurrency exchange rates effortlessly. Our platform seamlessly blends cutting-edgetechnology with refined simplicity, empowering you with confidence in understanding and monitoring crypto values. Join our community for a journey into precise cryptocurrency tracking.",
+        "At Student Homes, we're here to simplify the rental experience. We connect landlords with their ideal tenants and offer a diverse range of rental options for those in search of a home. Our mission is to provide transparency, convenience, and exceptional service. Join us today and discover a better way to rent.",
       image: student,
       href: "https://student-homes.vercel.app/",
     },

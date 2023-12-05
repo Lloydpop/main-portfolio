@@ -66,9 +66,23 @@ body::-webkit-scrollbar {
     transform: translateX(-200%);
   }
 }
+.bounce {
+  animation: bounce 2s linear infinite;
+}
+@keyframes bounce {
+  0% {
+    transform: scale(80%);
+  }
 
+  100% {
+    transform: scale(100%);
+  }
+}
 .animate-horizontalMovement {
   transform: translateX(100%);
   animation: horizontalMovement 15s linear infinite;
   /* Adjust the animation duration as needed */
+}
+.gray {
+  filter: brightness(0%);
 }

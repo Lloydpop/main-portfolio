@@ -20,10 +20,6 @@ function Footer({ darkMode }) {
       href: "https://www.instagram.com/perfection_dev_dump/",
       title: "instagram",
     },
-    {
-      href: "https://www.tiktok.com/@perfection_de_programmer",
-      title: "tiktok",
-    },
   ];
   return (
     <div className="lg:mt-48 mt-24">

@@ -52,7 +52,7 @@ export default function Home() {
               />
             </div>
             <div
-              className={` font-sauce mt-6  ${
+              className={` font-sauce mt-4  ${
                 view ? "translate-y-0" : "-translate-y-[100%]"
               } duration-[1s] ease-in-out`}
             >
