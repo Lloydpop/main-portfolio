@@ -109,7 +109,9 @@ const Wrapper = ({ children, darkMode, setDarkMode }) => {
                 <Image
                   src={wave}
                   alt=""
-                  className={`w-12 h-12 ${darkMode ? "" : "gray"}`}
+                  className={`lg:w-12 lg:h-12 md:w-12 md:h-12 sm:w-6 sm:h-6 w-6 h-6 ${
+                    darkMode ? "" : "gray"
+                  }`}
                 />
               ) : (
                 <MusicPlay variant="Bold" />
