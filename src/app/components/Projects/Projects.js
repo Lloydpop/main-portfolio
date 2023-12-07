@@ -16,6 +16,7 @@ function Projects({ darkMode }) {
         " Experience the sophistication of tracking cryptocurrency exchange rates effortlessly. Our platform seamlessly blends cutting-edgetechnology with refined simplicity, empowering you with confidence in understanding and monitoring crypto values. Join our community for a journey into precise cryptocurrency tracking.",
       image: crypto,
       href: "https://crpto-net.vercel.app/",
+      tool: "Next",
     },
     {
       name: "GMFB",
@@ -23,6 +24,7 @@ function Projects({ darkMode }) {
         " Embracing the latest in financial technology, we provide seamless digital banking solutions that enhance efficiency and convenience for our corporate clients. Manage your finances, conduct transactions, and access information with ease through our user-friendly platforms.",
       image: gmfb,
       href: "https://corporatebanking.groomingmfb.com/",
+      tool: "React",
     },
     {
       name: "CAPPEN",
@@ -30,6 +32,7 @@ function Projects({ darkMode }) {
         "Discover Cappen: Your Hub for Dynamic Animations. Elevate your content with captivating visuals and interactive storytelling. Join the animated revolution now",
       image: cappen,
       href: "https://cappen22.netlify.app/",
+      tool: "HTML, CSS, JAVASCRIPT",
     },
     {
       name: "PRIMUS",
@@ -37,6 +40,7 @@ function Projects({ darkMode }) {
         " Explore Primus Microservices — Your Gateway to Seamless Integration. Harness the power of modular solutions for simplified and efficient development. Join us in building resilient applications with Primus Microservices.",
       image: primus,
       href: "https://www.primussuite.com/",
+      tool: "Next",
     },
 
     {
@@ -45,6 +49,7 @@ function Projects({ darkMode }) {
         "At Student Homes, we're here to simplify the rental experience. We connect landlords with their ideal tenants and offer a diverse range of rental options for those in search of a home. Our mission is to provide transparency, convenience, and exceptional service. Join us today and discover a better way to rent.",
       image: student,
       href: "https://student-homes.vercel.app/",
+      tool: "React",
     },
   ];
   return (
@@ -70,6 +75,22 @@ function Projects({ darkMode }) {
               }`}
             >
               {item?.description}
+            </p>
+            <p className=" font-sauce uppercase flex items-center gap-1 mt-4 text-sm">
+              {item.tool}{" "}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px"
+                aria-hidden="true"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
             </p>
             <a
               target="_blank"

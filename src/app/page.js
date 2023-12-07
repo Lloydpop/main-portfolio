@@ -9,7 +9,9 @@ import { useEffect, useState } from "react";
 import Skills from "./components/Skills/Skills";
 export default function Home() {
   const [view, setView] = useState(false);
-  const [darkMode, setDarkMode] = useState("true");
+  const [darkMode, setDarkMode] = useState(
+    localStorage.getItem("darkMode") === "true"
+  );
   useEffect(() => {
     localStorage.setItem("darkMode", darkMode);
     document.body.style.backgroundColor = darkMode ? "#000" : "#fff";
