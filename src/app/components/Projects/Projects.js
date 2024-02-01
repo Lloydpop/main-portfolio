@@ -1,12 +1,12 @@
 import Heading from "@/components/Heading/Heading";
 import crypto from "../../../../public/img/crypto.png";
-import cappen from "../../../../public/img/cappen2.png";
+import cappen from "../../../../public/img/cheap.jpg";
 import primus from "../../../../public/img/primus.png";
 import student from "../../../../public/img/student.png";
 import gmfb from "../../../../public/img/gmfb.png";
 import React from "react";
 import Image from "next/image";
-import { Link } from "iconsax-react";
+import { EyeSlash, Link } from "iconsax-react";
 
 function Projects({ darkMode }) {
   const data = [
@@ -27,12 +27,12 @@ function Projects({ darkMode }) {
       tool: "React",
     },
     {
-      name: "CAPPEN",
+      name: "CHEAP RIDE",
       description:
-        "Discover Cappen: Your Hub for Dynamic Animations. Elevate your content with captivating visuals and interactive storytelling. Join the animated revolution now",
+        "A mobile solution designed to make affordable transportation accessible to everyone.",
       image: cappen,
-      href: "https://cappen22.netlify.app/",
-      tool: "HTML, CSS, JAVASCRIPT",
+      href: "#",
+      tool: "React Native",
     },
     {
       name: "PRIMUS",
@@ -93,7 +93,7 @@ function Projects({ darkMode }) {
               </svg>
             </p>
             <a
-              target="_blank"
+              target={i !== 2 && "_blank"}
               rel="noreferer"
               href={item.href}
               className={`flex items-center gap-2 font-sauce mt-3 tracking-tighter ${
@@ -102,8 +102,12 @@ function Projects({ darkMode }) {
                   : "text-black hover:text-primary"
               } font-bold`}
             >
-              VISIT NOW
-              <Link className="w-5 h-5" />
+              {i === 2 ? "COMING SOON" : " VISIT NOW"}
+              {i === 2 ? (
+                <EyeSlash className="w-5 h-5" />
+              ) : (
+                <Link className="w-5 h-5" />
+              )}
             </a>
           </div>
           <div
