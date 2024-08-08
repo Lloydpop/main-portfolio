@@ -1,9 +1,12 @@
-import Heading from "@/components/Heading/Heading";
+"use client"
 import Image from "next/image";
-import React from "react";
-import nose from "../../../../public/img/me3.jpg";
-import shoe from "../../../../public/img/smile.jpg";
+import React, { useEffect, useRef } from "react";
 import spotify from "../../../../public/img/spotify.png";
+import nose from "../../../../public/img/me3.jpg";
+import lloyd from "../../../../public/img/lloyder3.jpg";
+import smile from "../../../../public/img/smile.webp";
+import './HoverEffect.css'; 
+import hoverEffect from "hover-effect";
 function Skills({ darkMode }) {
   const data = [
     {
@@ -37,6 +40,19 @@ function Skills({ darkMode }) {
       title: "firebase",
     },
   ];
+  const ticketRef = useRef(null);
+
+  useEffect(() => {
+    new hoverEffect({
+      parent: ticketRef.current,
+      intensity1: 0.2,
+      intensity2: 0.1,
+      angle2: Math.PI / 2,
+      image1:lloyd.src,
+      image2:nose.src,
+      displacementImage: 'https://images.pexels.com/photos/1097203/pexels-photo-1097203.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260?raw=true'
+    });
+  }, []);
   return (
     <div className="lg:mt-48 mt-24">
       <div className="flex lg:flex-row flex-col lg:justify-center lg:w-[80%] mx-auto   gap-24">
@@ -88,20 +104,19 @@ function Skills({ darkMode }) {
           <p className="font-sauce mt-8 text-sm">
             I find solace in R&B and Soul music, which you can explore on <br />
             my current spotify playlist.
+            <Image src={smile} alt="smile" className="w-5 inline ml-1"/>
           </p>
 
           <div
-            class={`frame ${darkMode ? " darkMode" : "lightMode"} my-4`}
-            style={{
-              backgroundImage: `url(${nose.src})`,
-            }}
-          ></div>
 
+           ref={ticketRef}
+            className={`frame ticket p-5 mt-7  ${darkMode ? " darkMode" : "lightMode"} my-4`}
+          ></div>
           <a
             href="https://open.spotify.com/playlist/4jpdsYPe99YSFssvT3PHGF?si=4ebe7ee92cbe49a2"
             rel="noreferer"
             target="_blank"
-            className="text-md flex items-center gap-4 font-bold duration-300 hover:translate-x-[24px] text-primary hover:mix-blend-normal"
+            className="text-md mt-10 ml-9 flex items-center gap-4 font-bold duration-300 text-primary hover:mix-blend-normal"
           >
             <Image alt="spotify" className="w-[30px]" src={spotify} />
             Click to acess my spotify playlist.

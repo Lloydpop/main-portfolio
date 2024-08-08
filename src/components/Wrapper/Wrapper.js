@@ -8,30 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 const Wrapper = ({ children, darkMode, setDarkMode }) => {
   const { year, date } = useMonthAndYear();
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef(null);
 
-  useEffect(() => {
-    audioRef.current.addEventListener("ended", handleAudioEnded);
-
-    return () => {
-      audioRef.current.removeEventListener("ended", handleAudioEnded);
-    };
-  }, []);
-
-  const togglePlay = () => {
-    audioRef.current.volume = 0.1;
-    if (audioRef.current.paused) {
-      audioRef.current.play();
-    } else {
-      audioRef.current.pause();
-    }
-    setIsPlaying(!isPlaying);
-  };
-
-  const handleAudioEnded = () => {
-    setIsPlaying(false);
-  };
   const ScrollToTopButton = () => {
     const [isVisible, setIsVisible] = useState(false);
 
@@ -97,10 +74,6 @@ const Wrapper = ({ children, darkMode, setDarkMode }) => {
 
   return (
     <div className={`px-10 py-6 ${darkMode ? "text-gray-300 " : "#000"}`}>
-      <audio ref={audioRef} className="mt-4">
-        <source src={"/billy.mp3"} type="audio/mp3" />
-        Your browser does not support the audio element.
-      </audio>
       <ScrollToTopButton />
       <header>
         <nav className="flex lg:flex-row flex-col justify-between lg:items-center text-sm">
@@ -112,23 +85,11 @@ const Wrapper = ({ children, darkMode, setDarkMode }) => {
           <div className="lg:self-start self-end">
             <p className="font-sauce font-[500] tracking-tight lg:block hidden">
               PERFECTION CHIZURUOKE <br />
-              PORTFOLIO / 2021 — {year}
+              PORTFOLIO / 2022 — {year}
             </p>
           </div>
           <div className="flex items-center gap-4 lg:self-start self-end lg:mt-0 md:mt-0 sm:mt-4 mt-4">
-            <div className="cursor-pointer" onClick={togglePlay}>
-              {isPlaying ? (
-                <Image
-                  src={wave}
-                  alt=""
-                  className={`lg:w-12 lg:h-12 md:w-12 md:h-12 sm:w-6 sm:h-6 w-6 h-6 ${
-                    darkMode ? "" : "gray"
-                  }`}
-                />
-              ) : (
-                <MusicPlay variant="Bold" />
-              )}
-            </div>
+
 
             <div
               className={`w-[100px] h-[40px] rounded-[25px] flex  shadow-2xl items-center border relative ${

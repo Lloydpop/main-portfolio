@@ -4,10 +4,10 @@ import cappen from "../../../../public/img/cheap.jpg";
 import primus from "../../../../public/img/primus.png";
 import student from "../../../../public/img/student.png";
 import gmfb from "../../../../public/img/gmfb.png";
+import landest from "../../../../public/img/landest.png";
 import React from "react";
 import Image from "next/image";
 import { EyeSlash, Link } from "iconsax-react";
-
 function Projects({ darkMode }) {
   const data = [
     {
@@ -50,6 +50,13 @@ function Projects({ darkMode }) {
       image: student,
       href: "https://student-homes.vercel.app/",
       tool: "React",
+    },
+    {
+      name: "LANDEST",
+      description:"Enhance and elevate your real estate operations like never before with Landest. Experience seamless, innovative solutions designed to streamline your processes, maximize efficiency, and unlock new potential in the real estate market.",
+      image: landest,
+      href: "https://landest.co",
+      tool: "Next",
     },
   ];
   return (
@@ -125,6 +132,7 @@ function Projects({ darkMode }) {
               alt="primus"
             />
           </div>
+        
         </div>
       ))}
     </div>
