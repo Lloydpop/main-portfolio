@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-const useMonthAndYear = () => {
+export const useMonth = () => {
   const currentDate = new Date();
   const currentMonth = currentDate.getMonth();
   const year = currentDate.getFullYear();
@@ -30,5 +30,3 @@ const useMonthAndYear = () => {
     year,
   };
 };
-
-export default useMonthAndYear;

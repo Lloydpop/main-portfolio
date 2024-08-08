@@ -3,10 +3,10 @@ import Image from "next/image";
 import Heading from "../components/Heading/Heading";
 import profile from "../../public/img/me.png";
 import profile2 from "../../public/img/me.jpg";
-import Projects from "./components/Projects/Projects";
-import Wrapper from "@/components/Wrapper/Wrapper";
+import Projects from "./pageComponents/Projects/Projects";
+import Wrapper from "../components/Wrapper/Wrapper";
 import { useEffect, useState } from "react";
-import Skills from "./components/Skills/Skills";
+import Skills from "./pageComponents/Skills/Skills";
 export default function Home() {
   const [view, setView] = useState(false);
   const [darkMode, setDarkMode] = useState("true");

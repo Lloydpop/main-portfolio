@@ -1,4 +1,4 @@
-import Heading from "@/components/Heading/Heading";
+
 import crypto from "../../../../public/img/crypto.png";
 import cappen from "../../../../public/img/cheap.jpg";
 import primus from "../../../../public/img/primus.png";
@@ -8,6 +8,7 @@ import landest from "../../../../public/img/landest.png";
 import React from "react";
 import Image from "next/image";
 import { EyeSlash, Link } from "iconsax-react";
+import Heading from "../../../components/Heading/Heading";
 function Projects({ darkMode }) {
   const data = [
     {

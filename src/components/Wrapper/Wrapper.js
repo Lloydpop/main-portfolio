@@ -1,13 +1,11 @@
 "use client";
-import { DocumentDownload, Moon, MusicPlay, Sun } from "iconsax-react";
+import { DocumentDownload, Moon,Sun } from "iconsax-react";
 import Button from "../Button/Button";
+import {useMonth} from "../../hooks/useMonth"
 import Footer from "../Footer/Footer";
-import useMonthAndYear from "@/hooks/useMonthAndYaer";
-import wave from "../../../public/img/wave.gif";
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import { useEffect,useState } from "react";
 const Wrapper = ({ children, darkMode, setDarkMode }) => {
-  const { year, date } = useMonthAndYear();
+  const { year, date } =useMonth()
 
   const ScrollToTopButton = () => {
     const [isVisible, setIsVisible] = useState(false);
