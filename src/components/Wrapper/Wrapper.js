@@ -1,5 +1,5 @@
 "use client";
-import { DocumentDownload, Moon,Sun } from "iconsax-react";
+import { ArrowSquareDown, DocumentDownload, Moon,Sun } from "iconsax-react";
 import Button from "../Button/Button";
 import {useMonth} from "../../hooks/useMonth"
 import Footer from "../Footer/Footer";
@@ -119,7 +119,7 @@ const Wrapper = ({ children, darkMode, setDarkMode }) => {
             <Button href={"assets/cv.pdf"} darkMode={darkMode}>
               <p className="flex items-center gap-2">
                 MY RESUME
-                <DocumentDownload className="w-4 h-4" />
+                <ArrowSquareDown className="w-4 h-4" />
               </p>
             </Button>
           </div>

@@ -13,10 +13,6 @@ function Footer({ darkMode }) {
       title: "linkden",
     },
     {
-      href: "https://twitter.com/perfectionchiz",
-      title: "twitter",
-    },
-    {
       href: "https://www.instagram.com/perfection_dev_dump/",
       title: "instagram",
     },
@@ -24,13 +20,14 @@ function Footer({ darkMode }) {
   return (
     <div className="lg:mt-48 mt-24">
       <footer>
-        <p className="font-sauce text-center  mb-12 mt-24 text-sm">
+        <p className="font-sauce text-center mt-24 text-sm">
           If you have any inquiries, proposals, or exciting projects in mind,
           <br className="lg:block hidden" />
           feel free to reach out. I&apos;m open to collaboration
           <br className="lg:block hidden" /> and always ready to discuss new
           opportunities.
         </p>
+        <p className="font-bold mb-12 mt-4 font-mono text-center">{`(+234-703-851-7961)`}</p>
         <div
           className={`text-center
           } border-b border-t py-6 ${

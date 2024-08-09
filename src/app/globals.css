@@ -50,8 +50,8 @@ body::-webkit-scrollbar {
 .frame {
   width: var(--size);
   height: var(--size);
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 500px;
+  max-height: 500px;
   position: relative;
   background-position: center;
   background-size: cover;
