@@ -101,7 +101,7 @@ function Projects({ darkMode }) {
               </svg>
             </p>
             <a
-              target={i !== 2 && "_blank"}
+              target={i !==3  && "_blank"}
               rel="noreferer"
               href={item.href}
               className={`flex items-center gap-2 font-sauce mt-3 tracking-tighter ${
@@ -110,8 +110,8 @@ function Projects({ darkMode }) {
                   : "text-black hover:text-primary"
               } font-bold`}
             >
-              {i === 2 ? "COMING SOON" : " VISIT NOW"}
-              {i === 2 ? (
+              {i === 3 ? "COMING SOON" : " VISIT NOW"}
+              {i === 3 ? (
                 <EyeSlash className="w-5 h-5" />
               ) : (
                 <Link className="w-5 h-5" />
