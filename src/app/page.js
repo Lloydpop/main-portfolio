@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <Wrapper darkMode={darkMode} setDarkMode={setDarkMode}>
       <main className="">
-        <section className="mt-12 flex lg:flex-row flex-col justify-between gap-10">
+        <section className="lg:mt-28 mt-12 flex lg:flex-row flex-col justify-between gap-10">
           <div className="mt-1">
             <div className="overflow-hidden lg:pr-4 text-center lg:text-start">
               <div

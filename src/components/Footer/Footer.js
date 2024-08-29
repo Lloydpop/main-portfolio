@@ -10,7 +10,7 @@ function Footer({ darkMode }) {
     },
     {
       href: "https://www.linkedin.com/in/lloydpop",
-      title: "linkden",
+      title: "LinkedIn",
     },
     {
       href: "https://www.instagram.com/perfection_dev_dump/",

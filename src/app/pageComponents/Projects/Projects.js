@@ -1,4 +1,3 @@
-
 import crypto from "../../../../public/img/crypto.png";
 import cappen from "../../../../public/img/cheap.jpg";
 import primus from "../../../../public/img/primus.png";
@@ -12,11 +11,11 @@ import Heading from "../../../components/Heading/Heading";
 function Projects({ darkMode }) {
   const data = [
     {
-      name: "CRYPTO-NET",
+      name: "LANDEST",
       description:
-        " Experience the sophistication of tracking cryptocurrency exchange rates effortlessly. Our platform seamlessly blends cutting-edgetechnology with refined simplicity, empowering you with confidence in understanding and monitoring crypto values. Join our community for a journey into precise cryptocurrency tracking.",
-      image: crypto,
-      href: "https://crpto-net.vercel.app/",
+        "Enhance and elevate your real estate operations like never before with Landest. Experience seamless, innovative solutions designed to streamline your processes, maximize efficiency, and unlock new potential in the real estate market.",
+      image: landest,
+      href: "https://landest.co",
       tool: "Next",
     },
     {
@@ -26,6 +25,14 @@ function Projects({ darkMode }) {
       image: gmfb,
       href: "https://corporatebanking.groomingmfb.com/",
       tool: "React",
+    },
+    {
+      name: "CRYPTO-NET",
+      description:
+        " Experience the sophistication of tracking cryptocurrency exchange rates effortlessly. Our platform seamlessly blends cutting-edgetechnology with refined simplicity, empowering you with confidence in understanding and monitoring crypto values. Join our community for a journey into precise cryptocurrency tracking.",
+      image: crypto,
+      href: "https://crpto-net.vercel.app/",
+      tool: "Next",
     },
     {
       name: "CHEAP RIDE",
@@ -51,13 +58,6 @@ function Projects({ darkMode }) {
       image: student,
       href: "https://student-homes.vercel.app/",
       tool: "React",
-    },
-    {
-      name: "LANDEST",
-      description:"Enhance and elevate your real estate operations like never before with Landest. Experience seamless, innovative solutions designed to streamline your processes, maximize efficiency, and unlock new potential in the real estate market.",
-      image: landest,
-      href: "https://landest.co",
-      tool: "Next",
     },
   ];
   return (
@@ -125,7 +125,7 @@ function Projects({ darkMode }) {
           >
             <Image
               className={`w-full object-cover border  h-full rounded-se-[60px] rounded-bl-[60px] scale-90 ${
-                (darkMode && i === 1) || i === 3
+                (darkMode && i === 1) || i === 4
                   ? "border-[#000]"
                   : "border-[#ffffff9d]"
               }`}
@@ -133,7 +133,6 @@ function Projects({ darkMode }) {
               alt="primus"
             />
           </div>
-        
         </div>
       ))}
     </div>

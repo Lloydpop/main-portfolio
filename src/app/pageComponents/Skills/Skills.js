@@ -1,7 +1,6 @@
 "use client"
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
-import spotify from "../../../../public/img/spotify.png";
 import nose from "../../../../public/img/me3.jpg";
 import lloyd from "../../../../public/img/mee.jpg";
 import smile from "../../../../public/img/smile.webp";
@@ -38,6 +37,9 @@ function Skills({ darkMode }) {
     },
     {
       title: "firebase",
+    },
+    {
+      title: "Angular",
     },
   ];
   const ticketRef = useRef(null);
