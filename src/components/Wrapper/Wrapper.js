@@ -116,7 +116,7 @@ const Wrapper = ({ children, darkMode, setDarkMode }) => {
                 {darkMode ? "DARK" : "LIGHT"}
               </p>
             </div>
-            <Button href={"assets/cv.pdf"} darkMode={darkMode}>
+            <Button href={"assets/Perfection_Chizuruoke_Resume.pdf"} darkMode={darkMode}>
               <p className="flex items-center gap-2">
                 MY RESUME
                 <ArrowSquareDown className="w-4 h-4" />
